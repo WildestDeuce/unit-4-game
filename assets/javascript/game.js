@@ -10,5 +10,11 @@ var crystalNumber = [1,2,3,4,5,6,7,8,9,10,11,12];
 
 console.log(crystalNumber)
 
+//Create a function to randomly select numbers from computerGuess and crystalNumber
+var rand = computerGuess[Math.floor(Math.random() * computerGuess.length)];
 
+console.log(rand)
 
+var num = crystalNumber[Math.floor(Math.random() * crystalNumber.length)];
+
+console.log(num)
