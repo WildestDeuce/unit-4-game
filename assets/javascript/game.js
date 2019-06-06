@@ -2,8 +2,6 @@
 var win = 0;
 var loss = 0;
 
-
-
 //Create arrays for random numbers
 
 //var arr = Array.apply(null, {length: N}).map(Number.call, Number);
@@ -28,6 +26,7 @@ var crystalTwo = crystalNumber[Math.floor(Math.random() * crystalNumber.length)]
 var crystalThree = crystalNumber[Math.floor(Math.random() * crystalNumber.length)];
 
 var crystalFour = crystalNumber[Math.floor(Math.random() * crystalNumber.length)];
+
 console.log(crystalOne)
 console.log(crystalTwo)
 console.log(crystalThree)
@@ -52,5 +51,5 @@ if (computerGuess === crystalAdd()) {
 //loss condition: sum of crystals one,two,three,four > computerGuess
 
 else if (crystalAdd() > computerGuess) {
-    loss++
+    loss++;
 }
