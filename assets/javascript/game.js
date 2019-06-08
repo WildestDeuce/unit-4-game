@@ -48,25 +48,25 @@ $(document).ready(function () {
 
         console.log(score);
     })
-    $("#number2").attr("data-value", crystalOne);
+    $("#number2").attr("data-value", crystalTwo);
 
     $("#number2").on("click", function () {
-        crystalOne = $(this).attr("data-value");
-        score += parseInt(crystalOne)
+        crystalTwo = $(this).attr("data-value");
+        score += parseInt(crystalTwo)
 
 
-        $("#number3").attr("data-value", crystalOne);
+        $("#number3").attr("data-value", crystalThree);
 
         $("#number3").on("click", function () {
-            crystalOne = $(this).attr("data-value");
-            score += parseInt(crystalOne)
+            crystalThree = $(this).attr("data-value");
+            score += parseInt(crystalThree)
 
 
-            $("#number4").attr("data-value", crystalOne);
+            $("#number4").attr("data-value", crystalFour);
 
             $("#number4").on("click", function () {
-                crystalOne = $(this).attr("data-value");
-                score += parseInt(crystalOne)
+                crystalFour = $(this).attr("data-value");
+                score += parseInt(crystalFour)
                 // function for #number2
 
                 // function for #number3
