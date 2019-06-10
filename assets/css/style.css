@@ -3,3 +3,26 @@ h1 {
     font-style: italic;
     font-size: 100px;
 }
+
+#number1 {
+size: 90px
+}
+
+#number2 {
+    float: left;
+}
+
+
+#number3 {
+
+}
+
+
+#number4 {
+    float: left;
+}
+
+h3 {
+    color: black;
+    font-size: 35px;
+}

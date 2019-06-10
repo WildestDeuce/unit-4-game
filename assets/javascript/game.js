@@ -77,15 +77,15 @@ $(document).ready(function () {
 
     //win condition: computerGuess === sum of crystals one,two,three,four
 
-    if (computerGuess === score) {
+    if (rand === score) {
         win++;
         $("#win").html("<h3>" + win + "</h3>");
     }
 
     //loss condition: sum of crystals one,two,three,four > computerGuess
 
-    else (computerGuess > score) {
-        lose++;
-        $("#loss").html("<h3>" + loss + "</h3>");
-    }
+    //else (computerGuess > score) {
+        //lose++;
+        //$("#loss").html("<h3>" + loss + "</h3>");
+    //}
 });
