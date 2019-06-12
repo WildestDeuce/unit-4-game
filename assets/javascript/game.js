@@ -44,7 +44,7 @@ $(document).ready(function () {
         crystalOne = $(this).attr("data-value");
         score += parseInt(crystalOne);
 
-        console.log(score);
+        console.log('Score: ' + score);
     })
     // function for #number2
     $("#number2").attr("data-value", crystalTwo);
@@ -53,7 +53,7 @@ $(document).ready(function () {
         crystalTwo = $(this).attr("data-value");
         score += parseInt(crystalTwo);
 
-        console.log(score);
+        console.log('Score: ' + score);
     })
     // function for #number3
 
@@ -63,7 +63,7 @@ $(document).ready(function () {
         crystalThree = $(this).attr("data-value");
         score += parseInt(crystalThree);
 
-        console.log(score);
+        console.log('Score: ' + score);
     })
     //function for #number4
 
@@ -72,15 +72,15 @@ $(document).ready(function () {
     $("#number4").on("click", function () {
         crystalFour = $(this).attr("data-value");
         score += parseInt(crystalFour)
-        console.log(score);
+        console.log('Score: ' + score);
     })
-
-    //win condition: computerGuess === sum of crystals one,two,three,four
-
+    
     if (rand === score) {
         win++;
         $("#win").html("<h3>" + win + "</h3>");
     }
+    //win condition: computerGuess === sum of crystals one,two,three,four
+
 
     //loss condition: sum of crystals one,two,three,four > computerGuess
 

@@ -1,16 +1,25 @@
 h1 {
-    color: black;
+    color: green;
     font-style: italic;
-    font-size: 100px;
+    font-size:75px;
     text-align: center;
 }
 
 p {
-    color: blue;
+    color:purple;
     font-size: 15px;
     padding: 25px;
-    text-align: center;
+    text-align: left;
     
+}
+
+h2 {
+    font-size: 45px;
+    color:purple;
+}
+
+#score {
+    color:white;
 }
 
 #number1 {
@@ -32,7 +41,7 @@ size: 90px
 }
 
 h3 {
-    color: black;
+    color:purple;
     font-size: 35px;
-    text-align: center;
+    text-align: right;
 }
