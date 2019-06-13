@@ -74,7 +74,8 @@ $(document).ready(function () {
     $("#score").text(score);
     $("#win").text(win);
     $("#loss").text(loss); 
-         
+    $("#numberToGuess").text(rand); 
+    
     if (score === rand) {
         alert("You win!");
     }    

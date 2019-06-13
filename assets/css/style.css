@@ -22,12 +22,17 @@ h2 {
     color:purple;
 }
 
+
+#numberToGuess {
+    color:purple;
+}
 #number1 {
-size: 90px
+
 }
 
 #number2 {
     float: left;
+    
 }
 
 
