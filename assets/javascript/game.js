@@ -42,37 +42,7 @@ $(document).ready(function () {
 
         console.log('Score: ' + score);
     })
-    // function for #number2
-    $(".balloon-image").attr("data-value", balloonTwo);
-
-    $(".balloon-image").on("click", function () {
-        balloonTwo = $(this).attr("data-value");
-        score += parseInt(balloonTwo);
-
-        console.log('Score: ' + score);
-    })
-    // function for #number3
-
-    $(".balloon-image").attr("data-value", balloonThree);
-
-    $(".balloon-image").on("click", function () {
-        balloonThree = $(this).attr("data-value");
-        score += parseInt(balloonThree);
-
-        console.log('Score: ' + score);
-    })
-    //function for #number4
-
-    $(".balloon-image").attr("data-value", balloonFour);
-
-    $(".balloon-image").on("click", function () {
-        balloonFour = $(this).attr("data-value");
-        score += parseInt(balloonFour)
-        console.log('Score: ' + score);
-    })
-
-    $("#score").text(balloonOne + balloonTwo + balloonThree + balloonFour);
-
+  
     $("#win").text(win);
     $("#loss").text(loss);
     $("#numberToGuess").text(rand);
@@ -81,8 +51,8 @@ $(document).ready(function () {
         imageBalloon = $("<img>");
         imageBalloon.attr("data-value", computerGuess[i]);
         imageBalloon.addClass("balloon-image");
-        imageCrystal.attr("src", "assets/images/jadeBalloon.jpg");
-        $("#balloons").append(imageBalloon);
+        //imageBalloon.attr("src", "assets/images/jadeBalloon.jpg");
+        //$("#balloons").append(imageBalloon);
     }
     $(".balloon-image").on("click", function () {
         var balloonValue = ($(this).attr("data-value"));
