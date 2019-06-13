@@ -19,7 +19,7 @@ h2 {
 }
 
 #score {
-    color:white;
+    color:purple;
 }
 
 #number1 {
@@ -43,5 +43,5 @@ size: 90px
 h3 {
     color:purple;
     font-size: 35px;
-    text-align: right;
+    text-align: left;
 }

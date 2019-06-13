@@ -33,10 +33,6 @@ console.log(crystalTwo)
 console.log(crystalThree)
 console.log(crystalFour)
 
-//picks a random number from computerGuess
-//random numbers are assigned to crystals one,two,three,four
-//to keep score we need to add crystals one,two,three,four
-//assign attribute value in jQuery
 $(document).ready(function () {
     $("#number1").attr("data-value", crystalOne);
 
@@ -68,24 +64,23 @@ $(document).ready(function () {
     //function for #number4
 
     $("#number4").attr("data-value", crystalFour);
-
+ 
     $("#number4").on("click", function () {
         crystalFour = $(this).attr("data-value");
         score += parseInt(crystalFour)
         console.log('Score: ' + score);
     })
     
-    if (rand === score) {
-        win++;
-        $("#win").html("<h3>" + win + "</h3>");
-    }
-    //win condition: computerGuess === sum of crystals one,two,three,four
-
-
-    //loss condition: sum of crystals one,two,three,four > computerGuess
-
-    //else (computerGuess > score) {
-        //lose++;
-        //$("#loss").html("<h3>" + loss + "</h3>");
-    //}
+    $("#score").text(score);
+    $("#win").text(win);
+    $("#loss").text(loss); 
+         
+    if (score === rand) {
+        alert("You win!");
+    }    
+    
+    else if (score >= rand) {
+        alert("You lose!");
+    }        
+  
 });
