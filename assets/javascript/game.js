@@ -10,78 +10,92 @@ computerGuess.splice(0, 19); // removes 0-18 from array
 
 console.log(computerGuess)
 
-var crystalNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+var balloonNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-console.log(crystalNumber)
+console.log(balloonNumber)
 
-//Create a function to randomly select numbers from computerGuess and crystalNumber
+//Create a function to randomly select numbers from computerGuess and balloonNumber
 var rand = computerGuess[Math.floor(Math.random() * computerGuess.length)];
 
 console.log(rand)
 
-var crystalOne = crystalNumber[Math.floor(Math.random() * crystalNumber.length)];
+var balloonOne = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
 
-var crystalTwo = crystalNumber[Math.floor(Math.random() * crystalNumber.length)];
+var balloonTwo = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
 
-var crystalThree = crystalNumber[Math.floor(Math.random() * crystalNumber.length)];
+var balloonThree = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
 
-var crystalFour = crystalNumber[Math.floor(Math.random() * crystalNumber.length)];
+var balloonFour = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
 
 
-console.log(crystalOne)
-console.log(crystalTwo)
-console.log(crystalThree)
-console.log(crystalFour)
+console.log(balloonOne)
+console.log(balloonTwo)
+console.log(balloonThree)
+console.log(balloonFour)
 
 $(document).ready(function () {
-    $("#number1").attr("data-value", crystalOne);
+    $(".balloon-image").attr("data-value", balloonOne);
 
-    $("#number1").on("click", function () {
-        crystalOne = $(this).attr("data-value");
-        score += parseInt(crystalOne);
+    $(".balloon-image").on("click", function () {
+        balloonOne = $(this).attr("data-value");
+        score += parseInt(balloonOne);
 
         console.log('Score: ' + score);
     })
     // function for #number2
-    $("#number2").attr("data-value", crystalTwo);
+    $(".balloon-image").attr("data-value", balloonTwo);
 
-    $("#number2").on("click", function () {
-        crystalTwo = $(this).attr("data-value");
-        score += parseInt(crystalTwo);
+    $(".balloon-image").on("click", function () {
+        balloonTwo = $(this).attr("data-value");
+        score += parseInt(balloonTwo);
 
         console.log('Score: ' + score);
     })
     // function for #number3
 
-    $("#number3").attr("data-value", crystalThree);
+    $(".balloon-image").attr("data-value", balloonThree);
 
-    $("#number3").on("click", function () {
-        crystalThree = $(this).attr("data-value");
-        score += parseInt(crystalThree);
+    $(".balloon-image").on("click", function () {
+        balloonThree = $(this).attr("data-value");
+        score += parseInt(balloonThree);
 
         console.log('Score: ' + score);
     })
     //function for #number4
 
-    $("#number4").attr("data-value", crystalFour);
- 
-    $("#number4").on("click", function () {
-        crystalFour = $(this).attr("data-value");
-        score += parseInt(crystalFour)
+    $(".balloon-image").attr("data-value", balloonFour);
+
+    $(".balloon-image").on("click", function () {
+        balloonFour = $(this).attr("data-value");
+        score += parseInt(balloonFour)
         console.log('Score: ' + score);
     })
-    
-    $("#score").text(score);
+
+    $("#score").text(balloonOne + balloonTwo + balloonThree + balloonFour);
+
     $("#win").text(win);
-    $("#loss").text(loss); 
-    $("#numberToGuess").text(rand); 
-    
-    if (score === rand) {
-        alert("You win!");
-    }    
-    
-    else if (score >= rand) {
-        alert("You lose!");
-    }        
-  
+    $("#loss").text(loss);
+    $("#numberToGuess").text(rand);
+
+    for (var i = 0; i < computerGuess.length; i++) {
+        imageBalloon = $("<img>");
+        imageBalloon.attr("data-value", computerGuess[i]);
+        imageBalloon.addClass("balloon-image");
+        imageCrystal.attr("src", "assets/images/jadeBalloon.jpg");
+        $("#balloons").append(imageBalloon);
+    }
+    $(".balloon-image").on("click", function () {
+        var balloonValue = ($(this).attr("data-value"));
+        balloonValue = parseInt(balloonValue);
+        score += balloonValue;
+        alert("New score: " + score);
+
+        if (score === rand) {
+            alert("You win!");
+        }
+
+        else if (score >= rand) {
+            alert("You lose!");
+        }
+    })
 });

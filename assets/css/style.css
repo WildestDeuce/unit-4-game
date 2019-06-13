@@ -26,24 +26,13 @@ h2 {
 #numberToGuess {
     color:purple;
 }
-#number1 {
 
-}
 
-#number2 {
+.balloon-image{
     float: left;
+}
     
-}
 
-
-#number3 {
-
-}
-
-
-#number4 {
-    float: left;
-}
 
 h3 {
     color:purple;
