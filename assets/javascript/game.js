@@ -2,6 +2,10 @@
 var win = 0;
 var loss = 0;
 var score = 0;
+var balloonOne;
+var balloonTwo;
+var balloonThree;
+var balloonFour;
 
 //Create arrays for random numbers
 
@@ -14,58 +18,72 @@ var balloonNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 console.log(balloonNumber)
 
-//Create a function to randomly select numbers from computerGuess and balloonNumber
+//Create a variable to randomly select numbers from computerGuess and balloonNumber
 var rand = computerGuess[Math.floor(Math.random() * computerGuess.length)];
 
 console.log(rand)
 
-var balloonOne = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
+function Reset() {
+    score = 0;
+    $("#numberToGuess").text(rand);      
+    $("#score").text(score);
+    balloonOne = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
+    balloonTwo = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
+    balloonThree = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
+    balloonFour = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
+    $("#number1").attr("data-value", balloonOne);
+    $("#number2").attr("data-value", balloonTwo);
+    $("#number3").attr("data-value", balloonThree);
+    $("#number4").attr("data-value", balloonFour);
+    console.log(balloonOne)
+    console.log(balloonTwo)
+    console.log(balloonThree)
+    console.log(balloonFour)
+}
 
-var balloonTwo = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
-
-var balloonThree = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
-
-var balloonFour = balloonNumber[Math.floor(Math.random() * balloonNumber.length)];
-
-
-console.log(balloonOne)
-console.log(balloonTwo)
-console.log(balloonThree)
-console.log(balloonFour)
 
 $(document).ready(function () {
-    $(".balloon-image").attr("data-value", balloonOne);
 
+    Reset();
     $(".balloon-image").on("click", function () {
         balloonOne = $(this).attr("data-value");
         score += parseInt(balloonOne);
-
-        console.log('Score: ' + score);
-    })
-  
+        $("#score").text(score);
+        $("#numberToGuess").text(rand);      
+      
+        if (score === rand) {
+            Reset();
+            win++;
+            $("#win").text(win);
+            $("#numberToGuess").text(rand);
+            score=0;
+            alert("You win!");
+        }
+        else if (score >= rand) {
+            Reset();
+            loss++;
+            $("#loss").text(loss);
+            $("#numberToGuess").text(rand);
+            score=0;
+            alert("You lose!");
+        }
+    });
+    console.log('Score: ' + score);
+    
     $("#win").text(win);
     $("#loss").text(loss);
+    $("#score").text(score);
     $("#numberToGuess").text(rand);
-
+    
     for (var i = 0; i < computerGuess.length; i++) {
-        imageBalloon = $("<img>");
+        var imageBalloon = $("<img>");
         imageBalloon.attr("data-value", computerGuess[i]);
         imageBalloon.addClass("balloon-image");
         //imageBalloon.attr("src", "assets/images/jadeBalloon.jpg");
         //$("#balloons").append(imageBalloon);
     }
-    $(".balloon-image").on("click", function () {
-        var balloonValue = ($(this).attr("data-value"));
-        balloonValue = parseInt(balloonValue);
-        score += balloonValue;
-        alert("New score: " + score);
-
-        if (score === rand) {
-            alert("You win!");
-        }
-
-        else if (score >= rand) {
-            alert("You lose!");
-        }
-    })
 });
+
+// setTimeout(function() {
+    // other operatios here
+// }, 10000);
